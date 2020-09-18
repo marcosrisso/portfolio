@@ -23,6 +23,12 @@
 
 <body>
     <!-- START NAV -->
+    <div id="animated-bar"></div>
+    <!--<div class="headerbar">
+      <div class="progress-container">
+    <div class="progress-bar" id="myBar"></div>
+  </div> -->
+    </div>
     <div id="home">
         <nav id="navbar" class="nav">
             <ul class="nav justify-content-end"></ul>
@@ -38,6 +44,8 @@
             </ul>
         </nav>
     </div>
+
+
     <!-- END NAV -->
 
     <!-- START WELCOME SECTION -->
@@ -193,6 +201,7 @@
     <!-- END FOOTER SECTION -->
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
@@ -206,6 +215,26 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
     </script>
+    <script type="text/javascript">
+      $(window).scroll(function() {
+        var scroll = $(window).scrollTop(),
+        dh = $(document).height(),
+        wh = $(window).height();
+        scrollPrecent = (scroll / (dh-wh)) * 100;
+        $("#animated-bar").css('height', scrollPrecent + '%');
+      })
+    </script>
+    <script>
+// When the user scrolls the page, execute myFunction
+window.onscroll = function() {myFunction()};
+
+function myFunction() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("myBar").style.width = scrolled + "%";
+}
+</script>
 </body>
 
 </html>
