@@ -102,6 +102,13 @@ div.at-container {
 
 }
 
+#subtitle {
+font-size: small;
+color: #a09c9c;
+
+}
+
+
 .label {
   color: grey;
   font-size: 80%;
